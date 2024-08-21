@@ -7,8 +7,6 @@ Nova is a reimplementation of Tailwind CSS, optimized for maximum speed and perf
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Customization](#customization)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -41,68 +39,11 @@ Nova integrates seamlessly with your existing project setup. To start using Nova
 ### Including in HTML
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/getnova-github/nova/script.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/getnova-github/nova@main/script.js"></script>
 ```
+###Using
 
-### Importing in CSS/SCSS
-
-```css
-@import 'nova-css/nova.css';
-```
-
-### Using with PostCSS
-
-If you're using PostCSS, include Nova in your `postcss.config.js`:
-
-```javascript
-module.exports = {
-  plugins: [
-    require('nova-css')(),
-    // other plugins
-  ],
-};
-```
-
-## Configuration
-
-Nova allows you to customize your setup with a configuration file, similar to Tailwind's `tailwind.config.js`.
-
-To create a default configuration file, run:
-
-```bash
-npx nova-css init
-```
-
-This will generate a `nova.config.js` file in your project root, which you can edit to customize your design system.
-
-## Customization
-
-Nova provides a full suite of customization options, identical to that of Tailwind CSS:
-
-- **Extend utilities:** Add new utilities or modify existing ones.
-- **Theme customization:** Customize colors, fonts, spacing, and more.
-- **Responsive design:** Control responsive breakpoints to suit your project needs.
-- **Plugins:** Extend Nova with additional plugins for custom functionality.
-
-Example configuration:
-
-```javascript
-module.exports = {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#1a202c',
-        secondary: '#2d3748',
-      },
-      spacing: {
-        '72': '18rem',
-        '84': '21rem',
-      },
-    },
-  },
-  plugins: [],
-};
-```
+Nova is 100% backwards compatible with Tailwind CSS! All your existing code should be compatible.
 
 ## Contributing
 
