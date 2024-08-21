@@ -21,9 +21,7 @@ Nova is a reimplementation of Tailwind CSS, optimized for maximum speed and perf
 - **Optimized for production:** Automatic removal of unused styles for a minimal, optimized final build.
 
 ## Installation
-
-
-### ⚠️ COMING SOON ⚠️
+### ⚠️ COMING SOON. Just use via jsDelivr for now. ⚠️
 You can install Nova via npm:
 
 ```bash
@@ -43,7 +41,7 @@ Nova integrates seamlessly with your existing project setup. To start using Nova
 ### Including in HTML
 
 ```html
-<link href="/path-to-nova/nova.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/getnova-github/nova/script.js"></script>
 ```
 
 ### Importing in CSS/SCSS
