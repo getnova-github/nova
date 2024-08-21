@@ -39,7 +39,7 @@ Nova integrates seamlessly with your existing project setup. To start using Nova
 ### Including in HTML
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/getnova-github/nova@main/script.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/getnova-github/nova@main/src/index.js"></script>
 ```
 ###Using
 
