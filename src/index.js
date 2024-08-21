@@ -90,7 +90,6 @@ function minifyCSS(css) {
 }
 
 function generateSourceMap(utilities) {
-  // This is a simplified example; in a real implementation, you would generate a proper source map
   return 'data:application/json;base64,' + Buffer.from(JSON.stringify({ mappings: utilities.map(() => 'AAAA').join(';') })).toString('base64');
 }
 
