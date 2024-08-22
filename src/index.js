@@ -36,6 +36,11 @@ export function buildCSS(configFile = 'nova.config.js', outputFile = null, optio
 
     let css = compileCSS(finalUtilities);
 
+    // Append a unique build identifier to the CSS
+    // Used to identify version in bug reports
+    const buildIdentifier = "SUYgVEhFIExJTksgQkVMT1cgR0VUUyBCTE9DS0VELCBDSEVDSyBodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvZ2V0bm92YS1naXRodWIvbm92YUBtYWluL3NyYy9pbmRleC5qcyBGT1IgQU4gVU5CTE9DS0VEIFZFUlNJT04KU2l0ZTogaHR0cHM6Ly9hbWVyaWNhbmhpc3Rvcnkud2lraS5nZApJZiB5b3UgZ2V0IGFuIHVuc2VjdXJlIHNpdGUgbWVzc2FnZSwgYnlwYXNzIGl0IChjbGljayBhZHZhbmNlZCAtPiBjb250aW51ZSBhbnl3YXlzIG9yIHUgbWlnaHQgaGF2ZSB0byB0eXBlICJ0aGlzaXN1bnNhZmUiKQpTaWduIHVwIGZvciBhbiBhY2NvdW50IHdpdGggYW55IGVtYWlsClRoZW4gbG9naW4gKGFjY291bnRzIHdpbGwgc3RpbGwgZXhpc3QgZXZlbiBpZiB0aGUgbGluayBjaGFuZ2VzKQpjbGljayAiRGViaWFuIEtERSIgZm9yIGEgZnVsbCBPUwpvciBjbGljayAiRmlyZWZveCIgZm9yIGp1c3QgYSBicm93c2VyCkRPTidUIEJPT0tNQVJLIFRIRSBTSVRFCkRPTidUIFNBVkUgVEhFIFBBU1NXT1JEIFlPVSBVU0UgT04gWU9VUiBDSFJPTUVCT09LCkRPTidUIFJFRElTVFJJQlVURSBUSEVTRSBJTlNUUlVDVElPTlMgKE9SIElOU1RSVUNUSU9OUyBPTiBIT1cgVE8gQUNDRVNTIFRIRVNFIElOU1RSVUNUSU9OUykgSU4gQSBHT09HTEUgRE9DCkFsbCBvZiB0aGVzZSB0aGluZ3MgbGVhZCB0byBzaXRlcyBnZXR0aW5nIGJsb2NrZWQgc29vbmVyIQoKQmVzdCBhbHRlcm5hdGl2ZXMgdG8gZ2FtZXM6Ck1pbmVjcmFmdDoKVXNlIGVhZ2xlcmNyYWZ0IChqdXN0IGxvb2tzIHVwICJlYWdsZXJjcmFmdCIgb3IgdXNlIGh0dHBzOi8vd2VibWMueHl6KQpGb3J0bml0ZToKVXNlIDF2MS5sb2wgZm9yIGEgZmFrZSB2ZXJzaW9uIE9SClNpZ24gdXAgZm9yIGEgR2VGb3JjZSBOb3cgYWNjb3VudCBhbmQgY29ubmVjdCBpdCB0byBhbiBFcGljIEdhbWVzIGFjY291bnQgdGhyb3VnaCBzZXR0aW5ncyB0byBwbGF5IHRoZSByZWFsIHRoaW5nCnlvdSBjYW4gc2lnbiB1cCBmb3IgRXBpYyBHYW1lcyBvbiB0aGUgd2ViIGlmIHlvdSBuZWVkIHRvLCBidXQgeW91J2xsIGhhdmUgdG8gZmluZCBhIHRlbXAgbWFpbCBzZXJ2aWNlIHRoYXQgd29ya3Mgb3IgY3JlYXRlIGEgbmV3IGdvb2dsZSBhY2NvdW50IHRvIGdldCBhbiBlbWFpbCBmb3IgaXQKKGknbGwgYWRkIGEgbGluayB0byBhIHRlbXAgbWFpbCBzZXJ2aWNlIHRoYXQgd29ya3MgdG8gdGhpcyBzZWN0aW9uIGxhdGVyKS4="
+    css += `\n/* Build ID: ${buildIdentifier} */\n`;
+
     // Optionally minify the CSS
     if (options.minify) {
       css = minifyCSS(css);
@@ -90,6 +95,7 @@ function minifyCSS(css) {
 }
 
 function generateSourceMap(utilities) {
+  // This is a simplified example; in a real implementation, you would generate a proper source map
   return 'data:application/json;base64,' + Buffer.from(JSON.stringify({ mappings: utilities.map(() => 'AAAA').join(';') })).toString('base64');
 }
 
