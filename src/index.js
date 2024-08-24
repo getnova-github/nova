@@ -1,3 +1,4 @@
+// if you're seeing this, check out https://github.com/getnova-github/nova/ for more info!
 import { generateUtilities } from './utilities';
 import { resolveConfig, mergePlugins } from './config';
 import { applyPlugins } from './plugins';
